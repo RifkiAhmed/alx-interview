@@ -14,11 +14,8 @@ def pascal_triangle(n):
     for i in range(n):
         list = []
         for j in range(i + 1):
-            if i == 0:
+            if i == 0 or j == 0 or j == i:
                 list.append(1)
-                continue
-            if j == 0 or j == i:
-                list.append(matrix[i - 1][j - 1])
             else:
                 list.append(matrix[i - 1][j - 1] + matrix[i - 1][j])
         matrix.append(list)
