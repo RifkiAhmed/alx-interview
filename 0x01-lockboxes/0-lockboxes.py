@@ -4,24 +4,18 @@
 
 def canUnlockAll(boxes):
     '''Check if all boxes can be unlocked'''
-    if not isinstance(boxes, list):
-        return False
-
     size = len(boxes)
-    if size <= 1:
-        return True
-
     unlocked = [False] * size
     unlocked[0] = True
 
     for i in range(size):
         if unlocked[i]:
             for key in boxes[i]:
-                if 1 <= key < size:
+                if 0 <= key < size:
                     unlocked[key] = True
                 if key < i and key != 0 and unlocked[key]:
                     for sub_key in boxes[key]:
-                        if 1 <= sub_key < size:
+                        if 0 <= sub_key < size:
                             unlocked[sub_key] = True
     return all(unlocked)
 
