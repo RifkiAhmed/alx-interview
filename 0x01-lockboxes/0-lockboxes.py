@@ -10,15 +10,13 @@ def canUnlockAll(boxes):
 
     i = 0
     while i < size:
-        opened = False
+        opened = 0
         if unlocked[i]:
             for key in boxes[i]:
                 if 0 <= key < size and not unlocked[key]:
                     unlocked[key] = True
-                    opened = True
-        i += 1
-        if opened:
-            i = 0
+                    opened += 1
+        i = 0 if opened else i + 1
     return all(unlocked)
 
 # boxes = [[1], [2], [3], [4], []]
