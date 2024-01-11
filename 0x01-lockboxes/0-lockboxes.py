@@ -13,11 +13,9 @@ def canUnlockAll(boxes):
             for key in boxes[i]:
                 if 0 <= key < size:
                     unlocked[key] = True
-                for j in range(key):
-                    if unlocked[j]:
-                        for sub_key in boxes[j]:
-                            if 0 <= sub_key < size:
-                                unlocked[sub_key] = True
+                    for sub_key in boxes[key]:
+                        if 0 <= sub_key < size:
+                            unlocked[sub_key] = True
                 # if key < i and key != 0 and unlocked[key]:
                 #     for sub_key in boxes[key]:
                 #         if 0 <= sub_key < size:
