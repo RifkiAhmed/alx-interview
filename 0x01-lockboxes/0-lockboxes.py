@@ -13,7 +13,7 @@ def canUnlockAll(boxes):
             for key in boxes[i]:
                 if 1 <= key < size:
                     unlocked[key] = True
-                if key < i and unlocked[key]:
+                if key < i and key != 0 and unlocked[key]:
                     for sub_key in boxes[key]:
                         if 1 <= sub_key < size:
                             unlocked[sub_key] = True
