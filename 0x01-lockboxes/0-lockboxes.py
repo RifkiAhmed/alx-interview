@@ -17,7 +17,7 @@ def canUnlockAll(boxes):
                         if 0 <= sub_key < size:
                             unlocked[sub_key] = True
         if len(boxes[i]) == 0:
-            unlocked[i] = True,
+            unlocked[i] = True
 
     return all(unlocked)
 
