@@ -1,45 +1,23 @@
 #!/usr/bin/python3
-'''Determine if all the boxes can be opened'''
+'''Determine if all the boxes can be unlocked'''
 
 
 def canUnlockAll(boxes):
-    """
-    functionn that determines if all rooms can be unlocked
-    """
-    boxkeys = {0: 1}
+    '''Check if all boxes can be unlocked'''
+    size = len(boxes)
+    unlocked = [False] * size
+    unlocked[0] = True
 
-    def visitbox(box):
-        """
-        recursive function to visit every box
-        with a key
-        """
-        for key in box:
-            try:
-                if key not in boxkeys and 1 <= key < len(boxes):
-                    boxkeys[key] = 1
-                    visitbox(boxes[key])
-            except RecursionError:
-                visitbox(boxes[0])
-
-    visitbox(boxes[0])
-    return len(boxkeys) == len(boxes)
-
-# def canUnlockAll(boxes):
-#     '''Check if all boxes can be unlocked'''
-#     size = len(boxes)
-#     unlocked = [False] * size
-#     unlocked[0] = True
-
-#     i = 0
-#     while i < size:
-#         opened = 0
-#         if unlocked[i]:
-#             for key in boxes[i]:
-#                 if 0 <= key < size and not unlocked[key]:
-#                     unlocked[key] = True
-#                     opened += 1
-#         i = 0 if opened else i + 1
-#     return all(unlocked)
+    i = 0
+    while i < size:
+        opened = 0
+        if unlocked[i]:
+            for key in boxes[i]:
+                if 1 <= key < size and not unlocked[key]:
+                    unlocked[key] = True
+                    opened = 1
+        i = 1 if opened else i + 1
+    return all(unlocked)
 
 
 '''Examples'''
