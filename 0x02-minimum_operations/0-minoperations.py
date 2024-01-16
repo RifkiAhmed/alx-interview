@@ -42,18 +42,9 @@ def minOperations(n):
     while (len(text) < n):
         if n % len(text) == 0:
             i, copy = copy_all(i, text)
-            while (True):
-                i, text = paste(i, text, copy)
-                if len(text) == n:
-                    # print('\n')
-                    return i
-                if n % len(text) == 0:
-                    i, copy = copy_all(i, text)
+            i, text = paste(i, text, copy)
         else:
             i, text = paste(i, text, copy)
-            if len(text) == n:
-                # print('\n')
-                return i
     return i if len(text) == n else 0
 
 
