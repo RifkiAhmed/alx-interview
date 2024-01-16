@@ -7,67 +7,47 @@ exactly n H characters in the file
 
 def copy_all(i, text):
     '''Return a copy of the text file'''
-    # print(' > copy all', end='')
+    # print(' > Copy All', end='')
     return (i + 1, text)
 
 
 def paste(i, text, copy):
     '''Append the copy string into the text file'''
-    # print(' > past > ', end='')
+    # print(' > Past >', end='')
     text += copy
-    # print(f' {text} ', end='')
+    # print(f' {text}', end='')
     return (i + 1, text)
 
 
 def minOperations(n):
     '''
-    Return the minimum number of copy all and paste operations to create a
-    text file of n 'H' characters.
+    Return the minimum number of copy all and paste operations to create
+    a text file of n 'H' characters.
 
     Args:
-    n (int): The number of 'H' characters to create in the text.
+    n (int): The number of 'H' characters to create in the text file.
 
-    Returns:
-    int: The minimum number of copy all and paste operations required to
-    create a text file with n 'H' characters. if n is impossible to
+    Returns: the minimum number of copy all and paste operations required
+    to create a text file with n 'H' characters. if n is impossible to
     achieve 0 is returned.
     '''
     text = 'H'
-    copy = 'H'
+    copy = ''
     i = 0
 
-    if not isinstance(n, int):
-        return 0
-
+    # print('\nH', end='')
     while (len(text) < n):
         if n % len(text) == 0:
             i, copy = copy_all(i, text)
             i, text = paste(i, text, copy)
         else:
             i, text = paste(i, text, copy)
+    # print()
     return i if len(text) == n else 0
 
 
-# n = 0
-# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# # -> Min # of operations to reach 0 char: 0
-
-# n = 1
-# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# # -> Min # of operations to reach 1 char: 0
-
-# n = 2
-# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# # -> Min # of operations to reach 2 char: 2
-
-# n = 4
-# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# # -> Min # of operations to reach 4 char: 4
-
-# n = 9
-# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# # -> Min # of operations to reach 9 char: 6
-
-# n = 12
-# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# # -> Min # of operations to reach 12 char: 7
+# Examples
+test_values = [0, 1, 2, 4, 9, 12]
+for n in test_values:
+    number = minOperations(n)
+    print("Min # of operations to reach {} char: {}".format(n, number))
