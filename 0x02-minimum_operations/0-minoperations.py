@@ -3,16 +3,16 @@
 Minimum number of copy all and paste operations required to result in
 exactly n H characters in the file
 '''
-from typing import Tuple
+# from typing import Tuple
 
 
-def copy_all(i: int, text: str) -> Tuple[int, str]:
+def copy_all(i: int, text: str):
     '''Return a copy of the text file'''
     # print(' > copy all', end='')
     return (i + 1, text)
 
 
-def paste(i: int, text: str, copy: str) -> Tuple[int, str]:
+def paste(i: int, text: str, copy: str):
     '''Append the copy string into the text file'''
     # print(' > past > ', end='')
     text += copy
