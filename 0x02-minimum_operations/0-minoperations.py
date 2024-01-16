@@ -47,7 +47,7 @@ def minOperations(n):
 
 
 # Examples
-test_values = [0, 1, 2, 4, 9, 12]
-for n in test_values:
-    number = minOperations(n)
-    print("Min # of operations to reach {} char: {}".format(n, number))
+# test_values = [0, 1, 2, 4, 9, 12]
+# for n in test_values:
+#     operations = minOperations(n)
+#     print("Min # of operations to reach {} char: {}".format(n, operations))
