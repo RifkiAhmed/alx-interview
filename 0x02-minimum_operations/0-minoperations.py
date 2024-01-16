@@ -5,21 +5,7 @@ exactly n H characters in the file
 '''
 
 
-def copy_all(i, text):
-    '''Return a copy of the text file'''
-    # print(' > Copy All', end='')
-    return (i + 1, text)
-
-
-def paste(i, text, copy):
-    '''Append the copy string into the text file'''
-    # print(' > Past >', end='')
-    text += copy
-    # print(f' {text}', end='')
-    return (i + 1, text)
-
-
-def minOperations(n):
+def minOperations(n: int) -> int:
     '''
     Return the minimum number of copy all and paste operations to create
     a text file of n 'H' characters.
@@ -31,23 +17,37 @@ def minOperations(n):
     to create a text file with n 'H' characters. if n is impossible to
     achieve 0 is returned.
     '''
-    text = 'H'
-    copy = ''
-    i = 0
+    text: int = 1  # Nombre of 'H' characters in the text file
+    copy: int = 1  # Copy of the file text
+    operations: int = 0  # Nombre of Copy All and Past operations
 
     # print('\nH', end='')
-    while (len(text) < n):
-        if n % len(text) == 0:
-            i, copy = copy_all(i, text)
-            i, text = paste(i, text, copy)
+    while (text < n):
+        if n % text == 0:
+            copy = text
+            # print(' > Copy All', end='')
+            text *= 2
+            # print(f' > Past > {"".join(["H"] * text)}', end='')
+            operations += 2
         else:
-            i, text = paste(i, text, copy)
+            text += copy
+            # print(f' > Past > {"".join(["H"] * text)}', end='')
+            operations += 1
     # print()
-    return i if len(text) == n else 0
+    return operations
 
 
 # Examples
-# test_values = [0, 1, 2, 4, 9, 12]
-# for n in test_values:
-#     operations = minOperations(n)
-#     print("Min # of operations to reach {} char: {}".format(n, operations))
+test_values = [0, 1, 2, 4, 9, 12, 7842956142]
+for n in test_values:
+    operations = minOperations(n)
+    print("Min # of operations to reach {} char: {}".format(n, operations))
+#
+# Results
+# Min # of operations to reach 0 char: 0
+# Min # of operations to reach 1 char: 0
+# Min # of operations to reach 2 char: 2
+# Min # of operations to reach 4 char: 4
+# Min # of operations to reach 9 char: 6
+# Min # of operations to reach 12 char: 7
+# Min # of operations to reach 7842956142 char: 28464
