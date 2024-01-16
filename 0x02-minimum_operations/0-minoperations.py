@@ -35,6 +35,10 @@ def minOperations(n):
     text: str = 'H'
     copy: str = ''
     i: int = 0
+
+    if not isinstance(n, int):
+        return 0
+
     while len(text) <= n:
         if len(text) == n:
             return i
@@ -56,7 +60,6 @@ def minOperations(n):
                     return i
                 if n % len(text) == 0:
                     i, copy = copy_all(i, text)
-
         else:
             i, text = paste(i, text, copy)
             if len(text) == n:
@@ -71,7 +74,7 @@ def minOperations(n):
 
 # n = 1
 # print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# # -> Min # of operations to reach 1 char: 1
+# # -> Min # of operations to reach 1 char: 0
 
 # n = 2
 # print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
