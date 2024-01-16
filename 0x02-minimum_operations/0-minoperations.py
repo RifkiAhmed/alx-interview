@@ -17,9 +17,9 @@ def minOperations(n):
     to create a text file with n 'H' characters. if n is impossible to
     achieve 0 is returned.
     '''
-    text = 1  # Nombre of 'H' characters in the text file
+    text = 1  # Numbre of 'H' characters in the text file
     copy = 1  # Copy of the file text
-    operations = 0  # Nombre of Copy All and Past operations
+    operations = 0  # Numbre of Copy All and Past operations
 
     # print('\nH', end='')
     while (text < n):
