@@ -5,7 +5,7 @@ exactly n H characters in the file
 '''
 
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     '''
     Return the minimum number of copy all and paste operations to create
     a text file of n 'H' characters.
@@ -17,9 +17,9 @@ def minOperations(n: int) -> int:
     to create a text file with n 'H' characters. if n is impossible to
     achieve 0 is returned.
     '''
-    text: int = 1  # Nombre of 'H' characters in the text file
-    copy: int = 1  # Copy of the file text
-    operations: int = 0  # Nombre of Copy All and Past operations
+    text = 1  # Nombre of 'H' characters in the text file
+    copy = 1  # Copy of the file text
+    operations = 0  # Nombre of Copy All and Past operations
 
     # print('\nH', end='')
     while (text < n):
@@ -38,10 +38,10 @@ def minOperations(n: int) -> int:
 
 
 # Examples
-test_values = [0, 1, 2, 4, 9, 12, 7842956142]
-for n in test_values:
-    operations = minOperations(n)
-    print("Min # of operations to reach {} char: {}".format(n, operations))
+# test_values = [0, 1, 2, 4, 9, 12, 7842956142]
+# for n in test_values:
+#     operations = minOperations(n)
+#     print("Min # of operations to reach {} char: {}".format(n, operations))
 #
 # Results
 # Min # of operations to reach 0 char: 0
