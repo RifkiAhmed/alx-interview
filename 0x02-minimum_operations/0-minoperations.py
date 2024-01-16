@@ -6,13 +6,13 @@ exactly n H characters in the file
 # from typing import Tuple
 
 
-def copy_all(i: int, text: str):
+def copy_all(i, text):
     '''Return a copy of the text file'''
     # print(' > copy all', end='')
     return (i + 1, text)
 
 
-def paste(i: int, text: str, copy: str):
+def paste(i, text, copy):
     '''Append the copy string into the text file'''
     # print(' > past > ', end='')
     text += copy
@@ -20,7 +20,7 @@ def paste(i: int, text: str, copy: str):
     return (i + 1, text)
 
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     '''
     Return the minimum number of copy all and paste operations to create a text
     file of n 'H' characters.
