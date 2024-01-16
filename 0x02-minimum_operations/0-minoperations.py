@@ -33,7 +33,7 @@ def minOperations(n):
     achieve 0 is returned.
     '''
     text = 'H'
-    copy = ''
+    copy = 'H'
     i = 0
 
     if not isinstance(n, int):
