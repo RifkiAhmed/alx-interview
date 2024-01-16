@@ -57,26 +57,26 @@ def minOperations(n):
     return i if len(text) == n else 0
 
 
-n = 0
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# -> Min # of operations to reach 0 char: 0
+# n = 0
+# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+# # -> Min # of operations to reach 0 char: 0
 
-n = 1
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# -> Min # of operations to reach 1 char: 0
+# n = 1
+# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+# # -> Min # of operations to reach 1 char: 0
 
-n = 2
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# -> Min # of operations to reach 2 char: 2
+# n = 2
+# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+# # -> Min # of operations to reach 2 char: 2
 
-n = 4
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# -> Min # of operations to reach 4 char: 4
+# n = 4
+# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+# # -> Min # of operations to reach 4 char: 4
 
-n = 9
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# -> Min # of operations to reach 9 char: 6
+# n = 9
+# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+# # -> Min # of operations to reach 9 char: 6
 
-n = 12
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-# -> Min # of operations to reach 12 char: 7
+# n = 12
+# print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+# # -> Min # of operations to reach 12 char: 7
