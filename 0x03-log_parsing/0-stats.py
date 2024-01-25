@@ -23,20 +23,20 @@ def print_statistics():
 
 
 try:
-    while True:
-        line = sys.stdin.readline().strip()
+    for line in sys.stdin:
         count += 1
         if re.match(pattern, line):
-            line_list = line.split()
-            size += int(line_list[-1])
-            if line_list[-2] in status:
-                status[line_list[-2]] += 1
+            line_parts = line.split()
+            size += int(line_parts[-1])
+            if line_parts[-2] in status:
+                status[line_parts[-2]] += 1
         if not line:
             print_statistics()
             break
         if count == 10:
             print_statistics()
             count = 0
+    print_statistics()
 except KeyboardInterrupt:
     print_statistics()
     raise KeyboardInterrupt
