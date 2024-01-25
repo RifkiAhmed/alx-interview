@@ -11,7 +11,7 @@ status = {"200": 0, "301": 0, "400": 0, "401": 0,
 pattern = re.compile(
     r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - '
     r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+)\] '
-    r'"GET \/projects\/260 HTTP\/1\.1" (.*) (\d+)')
+    r'"GET \/projects\/260 HTTP\/1\.1" (.+) (\d+)')
 
 
 def print_statistics():
