@@ -33,7 +33,7 @@ while True:
                 status[line_list[-2]] += 1
         if line == "":
             print_statistics()
-            exit(0)
+            break
         if count == 10:
             print_statistics()
             count = 0
