@@ -18,7 +18,7 @@ def nqueens(N):
                         attack = True
                     if (queen[1] == j):
                         attack = True
-                    if (i - queen[0]) == (j - queen[1]):
+                    if abs(i - queen[0]) == abs(j - queen[1]):
                         attack = True
             if not attack:
                 q[i] = [i, j]
