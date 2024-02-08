@@ -6,36 +6,35 @@ that prints all solution for N queens puzzle
 
 def nqueens(N):
     "Prints all solution for N queens puzzle"
-    q = {n: None for n in range(N)}
-    i = 0
-    j = 0
-    while i < N:
-        while j < N:
+    queens = {n: None for n in range(N)}
+    row = 0
+    col = 0
+    while row < N:
+        while col < N:
             attack = False
-            for queen in q.values():
+            for queen in queens.values():
                 if queen:
-                    if (queen[0] + queen[1]) == (i + j):
+                    queen_row, queen_col = queen
+                    if (queen_col == col):
                         attack = True
-                    if (queen[1] == j):
-                        attack = True
-                    if abs(i - queen[0]) == abs(j - queen[1]):
+                    if abs(row - queen_row) == abs(col - queen_col):
                         attack = True
             if not attack:
-                q[i] = [i, j]
-                j = 0
+                queens[row] = [row, col]
+                col = 0
                 break
-            j += 1
-        if i and not q[i] and q[i - 1]:
-            j = q[i - 1][1] + 1
-            q[i - 1] = None
-            i -= 1
+            col += 1
+        if row and not queens[row] and queens[row - 1]:
+            col = queens[row - 1][1] + 1
+            queens[row - 1] = None
+            row -= 1
             continue
-        i += 1
-        if all(value is not None for value in q.values()):
-            print(list(q.values()))
-            j = q[0][1] + 1
-            i = 0
-            q = {n: None for n in range(N)}
+        row += 1
+        if all(value is not None for value in queens.values()):
+            print(list(queens.values()))
+            col = queens[0][1] + 1
+            row = 0
+            queens = {n: None for n in range(N)}
 
 
 if __name__ == "__main__":
@@ -47,7 +46,7 @@ if __name__ == "__main__":
                 print("N must be at least 4")
                 exit(1)
             nqueens(N)
-        except (ValueError, TypeError):
+        except ValueError:
             print("N must be a number")
             exit(1)
     else:
