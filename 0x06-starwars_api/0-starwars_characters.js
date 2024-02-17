@@ -15,9 +15,9 @@ request(url, (error, response, body) => {
         request(character, (error, response, body) => {
           if (error) {
             reject(error);
-        } else {
+          } else {
             resolve(JSON.parse(body));
-        }
+          }
         });
       });
     });
@@ -25,11 +25,11 @@ request(url, (error, response, body) => {
     Promise.all(characters)
       .then((characters) => {
         characters.forEach((character) => {
-            console.log(character.name);
+          console.log(character.name);
         });
-    })
+      })
       .catch((error) => {
         console.error(error);
-    });
+      });
   }
 });
