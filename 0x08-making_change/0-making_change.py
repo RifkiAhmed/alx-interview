@@ -8,24 +8,14 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
-
-    memo = {}
-
-    def method(remaining_total):
-        if remaining_total in memo:
-            return memo[remaining_total]
-        if remaining_total < 0:
-            return -1
-        if remaining_total == 0:
-            return 0
-
-        min_coins = float('inf')
-        for coin in coins:
-            result = method(remaining_total - coin)
-            if result >= 0 and result < min_coins:
-                min_coins = result + 1
-
-        memo[remaining_total] = min_coins if min_coins != float('inf') else -1
-        return memo[remaining_total]
-
-    return method(total)
+    
+    coins.sort(reverse=True)
+    num_coins = 0
+    for coin in coins:
+        if total == 0:
+            break
+        num_coins += total // coin
+        total %= coin
+    if total == 0:
+        return num_coins
+    return -1
