@@ -35,7 +35,7 @@ def isWinner(x, nums):
 
     for n in nums:
         total_primes = count_primes(n)
-        if total_primes and total_primes % 2 == 0:
+        if total_primes % 2 == 0:
             ben_wins += 1
         else:
             maria_wins += 1
