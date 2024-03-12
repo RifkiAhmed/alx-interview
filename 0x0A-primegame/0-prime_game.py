@@ -27,7 +27,7 @@ def count_primes(n):
 def isWinner(x, nums):
     """ Returns prime game winner, else returns None
     """
-    if x <= 0 or not nums:
+    if x <= 0 or not nums or x != len(nums):
         return None
 
     maria_wins = 0
